@@ -1,5 +1,5 @@
 {% set name = "jupytab-server" %}
-{% set version = "0.9.9" %}
+{% set version = "0.9.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4ba7bb5b37374653febc0f279db970b80e964bda865cd1659977eecbc31cc7da
+  sha256: 6bc480e4b45d196fc6ce76326545378cd8b692103229d209d1622ad80a611203
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install --no-deps . -vv"
+  script: {{ PYTHON }} -m pip install --no-deps . -vv
   noarch: python
   entry_points:
     - jupytab=jupytab_server.jupytab:main
@@ -36,7 +36,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
-  summary: 'Connect Tableau to your Jupyter Notebook'
+  summary: Connect Tableau to your Jupyter Notebook
 
   description: |
     Jupytab Server allows you to explore in Tableau data which is generated
